@@ -54,3 +54,10 @@ After some testing, the root folder was saved to /home/ by injecting a path trav
 Once the root folder was saved, the root flag was extracted from the root.txt file.
 
 <h3>Remediation steps and conclusion</h3>
+It is well known that user input should never be trusted and the developers of Code were aware of this to some extent. As previously mentioned, they had included a blacklist that blocked execution of all malicious Python functions. However, they did not account for the fact that an attacker could attempt to query the backend database to obtain credentials. In this case, the developers should have blocked all functions used by the SQLAlchemy library as well. This would have prevented an attacker from obtaining credentials by injecting a malicious query in the code editor.
+
+Furthermore, two accounts with very weak passwords were logged in to the server. All organizations must adopt a secure password policy for all users. Whether Martin's account should be logged in at all on the server depends on the design of the backend and the account's purpose.
+
+Lastly, the root flag was obtained by injecting a path traversal sequence in the task.json file. It is fundamental that all accounts follow the principle of least privileges, in this case it would've made more sense for Martin to only have permission to run backy.sh and not to modify it.
+
+This box contained an interesting mix of vulnerabilities and was very educational. I found the initial access part to be the trickiest, since the obvious functions were blocked. Overall this was an interesting box with a pretty cool spin on the usual command injection. 
