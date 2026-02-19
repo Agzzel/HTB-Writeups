@@ -58,6 +58,6 @@ It is well known that user input should never be trusted and the developers of C
 
 Furthermore, two accounts with very weak passwords were logged in to the server. All organizations must adopt a secure password policy for all users. Whether Martin's account should be logged in at all on the server depends on the design of the backend and the account's purpose.
 
-Lastly, the root flag was obtained by injecting a path traversal sequence in the task.json file. It is fundamental that all accounts follow the principle of least privileges, in this case it would've made more sense for Martin to only have permission to run backy.sh and not to modify it.
+Lastly, the root flag was obtained by injecting a path traversal sequence in the task.json file. It is fundamental that all accounts follow the principle of least privileges, in this case it would've made more sense for Martin to only have permission to run backy.sh and not to modify task.json.
 
 This box contained an interesting mix of vulnerabilities and was very educational. I found the initial access part to be the trickiest, since the obvious functions were blocked. Overall this was an interesting box with a pretty cool spin on the usual command injection. 
